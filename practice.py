@@ -154,6 +154,3 @@ comment'''
     # print(bharat.name)
     # print(bharat.age)
     # bharat.education("BCA")
-
-
-
