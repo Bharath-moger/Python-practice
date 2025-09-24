@@ -39,9 +39,9 @@ class Account:
     def withdraw(self,amt):
         if amt <= 0:
             print(f"You Entered {amt} amount is not valid")
-            self.balance = self.balance-amt
         elif self.balance > amt:
             print(f"withdrawal succesfully of rupess {amt}")
+            self.balance -= amt
         else:
             print(f"Insufficient balance to withdrawal")
     def deposite(self,amt):

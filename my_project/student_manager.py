@@ -9,7 +9,7 @@ def read_students():
             print(row)
 
 def add_student(student_id, name, age, grade):
-    with open(FILE, "a", newline="") as f:
+    with open(FILE, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow([student_id, name, age, grade])
     print(f"Student {name} added successfully!")

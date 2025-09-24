@@ -5,10 +5,11 @@ from hello import Account
 BALANCE_FILE = "balance.txt"
 
 def load_balance():
-    if os.path.exists(BALANCE_FILE):
-        with open(BALANCE_FILE, "r") as f:
-            return int(f.read().strip())
-    return 1000   # default balance if file doesn’t exist
+    if not os.path.exists(BALANCE_FILE) or os.path.getsize(BALANCE_FILE) == 0:
+        save_balance(1000)
+        return 1000
+    with open(BALANCE_FILE, "r") as f:
+        return int(f.read().strip())
 
 def save_balance(balance):
     with open(BALANCE_FILE, "w") as f:
